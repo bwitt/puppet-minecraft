@@ -50,11 +50,17 @@ class minecraft (
   $view_distance        = 10,
   $spawn_protection     = 16,
 $motd                 = 'A Minecraft Server') {
-  include minecraft::packages
-  include minecraft::properties
-  include minecraft::service
-  include minecraft::source
-  include minecraft::user
+  contain minecraft::packages
+  contain minecraft::properties
+  contain minecraft::service
+  contain minecraft::source
+  contain minecraft::user
+
+  Class['minecraft::packages']
+  -> Class['minecraft::user']
+  -> Class['minecraft::source']
+  -> Class['minecraft::properties']
+  -> Class['minecraft::service']
 
   create_resources('minecraft::plugin', $plugins)
 }
