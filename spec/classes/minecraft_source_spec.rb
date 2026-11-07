@@ -21,7 +21,7 @@ describe 'minecraft::source' do
           is_expected.to contain_archive('minecraft_server').with(ensure: 'present',
                                                                   path: '/opt/minecraft/minecraft_server.jar',
                                                                   user: 'minecraft',
-                                                                  source: 'https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar')
+                                                                  source: 'https://piston-data.mojang.com/v1/objects/61220311cef80aecc4cd8afecd5f18ca6b9461ff/server.jar')
 
           is_expected.to contain_archive('minecraft_server').that_requires('User[minecraft]')
         end

@@ -53,6 +53,11 @@ or for a [CraftBukkit](http://dl.bukkit.org/downloads/craftbukkit/)
 installation, one of 'recommended', 'beta', or 'dev'. Latest vanilla
 version as of this writing is 1.7.5.
 
+Mojang no longer serves server JARs under version based URLs, so for
+vanilla servers set `source` to the `server.jar` URL from the
+[version manifest](https://piston-meta.mojang.com/mc/game/version_manifest_v2.json).
+The default is the Minecraft 1.7.4 server JAR.
+
 Please note that once a JAR file (the server) has been downloaded to
 `install_dir`, if you want to switch, you will need to manually remove
 it so that the `wget::fetch` resource can update; this is a _good
